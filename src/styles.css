@@ -100,13 +100,13 @@
 
   /* ── Backgrounds ── */
   --background: oklch(0.15 0.005 280);        /* #141418 — deep obsidian */
-  --foreground: oklch(0.93 0.008 75);          /* #F0EDE6 — warm ivory */
+  --foreground: oklch(0.95 0.005 80);          /* #F5F2EC — bright warm ivory */
 
   /* ── Surfaces ── */
   --card: oklch(0.18 0.005 280);               /* #1C1C22 — elevated charcoal */
-  --card-foreground: oklch(0.93 0.008 75);
+  --card-foreground: oklch(0.95 0.005 80);
   --popover: oklch(0.18 0.005 280);
-  --popover-foreground: oklch(0.93 0.008 75);
+  --popover-foreground: oklch(0.95 0.005 80);
 
   /* ── Primary = Champagne Gold ── */
   --primary: oklch(0.75 0.09 85);              /* #C4A265 — champagne gold */
@@ -114,11 +114,11 @@
 
   /* ── Secondary ── */
   --secondary: oklch(0.22 0.005 280);          /* #2A2A32 — soft charcoal */
-  --secondary-foreground: oklch(0.85 0.006 75); /* warm off-white */
+  --secondary-foreground: oklch(0.90 0.005 80); /* warm off-white */
 
   /* ── Muted ── */
   --muted: oklch(0.20 0.004 280);              /* #1E1E26 — dark surface */
-  --muted-foreground: oklch(0.58 0.01 280);    /* #8A8690 — warm slate */
+  --muted-foreground: oklch(0.72 0.006 280);    /* #A8A4B0 — clearly readable slate */
 
   /* ── Accent = Deep Navy ── */
   --accent: oklch(0.25 0.035 255);             /* #2A3040 — deep navy */
@@ -156,8 +156,8 @@
   --gold-bright: oklch(0.82 0.10 85);          /* #D4B87A — lighter gold for highlights */
   --obsidian: oklch(0.13 0.005 280);           /* #111115 — deepest dark */
   --charcoal: oklch(0.18 0.005 280);           /* #1C1C22 — card surface */
-  --ivory: oklch(0.93 0.008 75);               /* #F0EDE6 — warm ivory */
-  --slate-warm: oklch(0.45 0.008 280);         /* #5A5A68 — warm slate */
+  --ivory: oklch(0.95 0.005 80);               /* #F5F2EC — bright warm ivory */
+  --slate-warm: oklch(0.55 0.008 280);         /* #6E6A78 — lighter warm slate */
   --navy-deep: oklch(0.25 0.04 255);           /* #2A3050 — deep muted navy */
 }
 

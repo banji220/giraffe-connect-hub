@@ -33,7 +33,7 @@ export default function SocialProof() {
                     <Star key={j} size={14} className="fill-gold text-gold" />
                   ))}
                 </div>
-                <p className="mb-4 text-sm italic text-muted-foreground">
+                <p className="mb-4 text-sm italic text-foreground/70">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
