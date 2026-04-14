@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeInView from "./FadeInView";
 import { MapPin, Calculator, Zap, Target } from "lucide-react";
 
 const steps = [
@@ -36,40 +36,33 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="px-5 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl"
-        >
-          How it actually works.
-        </motion.h2>
+        <FadeInView>
+          <h2 className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl">
+            How it actually works.
+          </h2>
+        </FadeInView>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
-            <motion.div
-              key={s.num}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -4 }}
-              className={`relative rounded-3xl ${s.bg} p-6`}
-              style={{
-                borderWidth: "3px",
-                borderColor: "#0F0F0F",
-                boxShadow: "8px 8px 0px #0F0F0F",
-              }}
-            >
-              <span className="font-heading text-5xl font-bold leading-none text-foreground/20" style={{ fontVariantNumeric: "tabular-nums" }}>
-                {s.num}
-              </span>
-              <div className="mt-3 mb-3">
-                <s.icon size={28} strokeWidth={2.5} />
+            <FadeInView key={s.num} delay={i * 0.1}>
+              <div
+                className={`relative h-full rounded-3xl ${s.bg} p-6`}
+                style={{
+                  borderWidth: "3px",
+                  borderColor: "#0F0F0F",
+                  boxShadow: "8px 8px 0px #0F0F0F",
+                }}
+              >
+                <span className="font-heading text-5xl font-bold leading-none text-foreground/20" style={{ fontVariantNumeric: "tabular-nums" }}>
+                  {s.num}
+                </span>
+                <div className="mt-3 mb-3">
+                  <s.icon size={28} strokeWidth={2.5} />
+                </div>
+                <h3 className="mb-2 font-heading text-lg font-bold">{s.title}</h3>
+                <p className="text-sm text-foreground/70">{s.body}</p>
               </div>
-              <h3 className="mb-2 font-heading text-lg font-bold">{s.title}</h3>
-              <p className="text-sm text-foreground/70">{s.body}</p>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
       </div>
