@@ -21,12 +21,11 @@ const BrutalButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`rounded-2xl px-6 py-3 font-heading text-sm font-bold transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#0F0F0F] active:translate-x-1.5 active:translate-y-1.5 active:shadow-[2px_2px_0px_#0F0F0F] ${
+    className={`rounded-xl px-6 py-3 font-heading text-sm font-bold tracking-wide transition-all duration-200 ${
       variant === "primary"
-        ? "bg-emerald-primary text-foreground"
-        : "bg-white text-foreground"
+        ? "bg-gold text-obsidian hover:bg-gold-bright hover:shadow-[0_0_20px_oklch(0.75_0.09_85_/_0.25)]"
+        : "bg-transparent text-foreground border border-border hover:border-gold/40 hover:text-gold"
     } ${className}`}
-    style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "8px 8px 0px #0F0F0F" }}
   >
     {children}
   </button>
@@ -36,11 +35,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b-3 border-foreground bg-brand-black" style={{ borderBottomWidth: "3px" }}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-        <a href="#" className="flex items-center gap-2">
-          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto brightness-0 invert drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]" />
-          <span className="font-heading text-xl font-bold text-brand-yellow">Giraffe CRM</span>
+    <nav className="sticky top-0 z-50 border-b border-border/40 bg-obsidian/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+        <a href="#" className="flex items-center gap-2.5">
+          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-9 w-auto brightness-0 invert opacity-90" />
+          <span className="font-heading text-lg font-bold text-gold tracking-wide">Giraffe CRM</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -48,7 +47,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="font-heading text-sm font-medium text-white/80 transition-colors hover:text-brand-yellow"
+              className="font-heading text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-gold"
             >
               {l.label}
             </a>
@@ -56,19 +55,19 @@ export default function Navbar() {
           <BrutalButton>Get Early Access</BrutalButton>
         </div>
 
-        <button className="text-white md:hidden" onClick={() => setOpen(!open)}>
-          {open ? <X size={24} /> : <Menu size={24} />}
+        <button className="text-foreground/70 md:hidden" onClick={() => setOpen(!open)}>
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="overflow-hidden border-t border-white/10 bg-brand-black md:hidden animate-[fadeUp_0.2s_ease-out]">
-          <div className="flex flex-col gap-4 px-5 py-4">
+        <div className="border-t border-border/30 bg-obsidian md:hidden animate-[fadeUp_0.2s_ease-out]">
+          <div className="flex flex-col gap-4 px-5 py-5">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="font-heading text-sm font-medium text-white/80 hover:text-brand-yellow"
+                className="font-heading text-sm font-medium text-muted-foreground hover:text-gold"
                 onClick={() => setOpen(false)}
               >
                 {l.label}

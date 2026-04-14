@@ -9,11 +9,11 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground px-5 py-12 text-background">
+    <footer className="border-t border-border/30 bg-obsidian px-5 py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-between">
-        <div className="flex items-center gap-2">
-          <img src={giraffeLogo} alt="Giraffe CRM" className="h-8 w-auto brightness-0 invert drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]" />
-          <span className="font-heading text-lg font-bold">Giraffe CRM</span>
+        <div className="flex items-center gap-2.5">
+          <img src={giraffeLogo} alt="Giraffe CRM" className="h-8 w-auto brightness-0 invert opacity-80" />
+          <span className="font-heading text-lg font-bold text-gold">Giraffe CRM</span>
         </div>
 
         <nav className="flex flex-wrap justify-center gap-6">
@@ -21,19 +21,19 @@ export default function Footer() {
             <a
               key={l.label}
               href={l.href}
-              className="text-sm text-background/70 transition-colors hover:text-pastel-yellow"
+              className="text-sm text-muted-foreground transition-colors duration-200 hover:text-gold"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <p className="text-sm text-background/50">
+        <p className="text-sm text-muted-foreground/50">
           Built for the knockers by a knocker.
         </p>
       </div>
 
-      <div className="mx-auto mt-8 max-w-6xl border-t border-background/10 pt-6 text-center text-xs text-background/40">
+      <div className="mx-auto mt-8 max-w-6xl border-t border-border/15 pt-6 text-center text-xs text-muted-foreground/40">
         &copy; 2026 Holy Giraffe
       </div>
     </footer>
