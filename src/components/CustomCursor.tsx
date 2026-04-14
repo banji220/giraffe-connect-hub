@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { motion, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const x = useSpring(0, { stiffness: 500, damping: 28 });
   const y = useSpring(0, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
+    setMounted(true);
     const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) return;
 
@@ -28,7 +30,7 @@ export default function CustomCursor() {
     };
   }, [visible, x, y]);
 
-  if (!visible) return null;
+  if (!mounted || !visible) return null;
 
   return (
     <motion.div
