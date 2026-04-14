@@ -1,17 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import CustomCursor from "@/components/CustomCursor";
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import HowItWorks from "@/components/HowItWorks";
-import TerritorySection from "@/components/TerritorySection";
-import PainPoints from "@/components/PainPoints";
-import FeaturesSection from "@/components/FeaturesSection";
-import StatsBanner from "@/components/StatsBanner";
-import ExtrasSection from "@/components/ExtrasSection";
-import SocialProof from "@/components/SocialProof";
-import PricingSection from "@/components/PricingSection";
-import CtaSection from "@/components/CtaSection";
-import Footer from "@/components/Footer";
+
+// Lazy-load everything below the fold
+const HowItWorks = lazy(() => import("@/components/HowItWorks"));
+const TerritorySection = lazy(() => import("@/components/TerritorySection"));
+const PainPoints = lazy(() => import("@/components/PainPoints"));
+const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
+const StatsBanner = lazy(() => import("@/components/StatsBanner"));
+const ExtrasSection = lazy(() => import("@/components/ExtrasSection"));
+const SocialProof = lazy(() => import("@/components/SocialProof"));
+const PricingSection = lazy(() => import("@/components/PricingSection"));
+const CtaSection = lazy(() => import("@/components/CtaSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const CustomCursor = lazy(() => import("@/components/CustomCursor"));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,21 +31,27 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="cursor-none overflow-x-hidden">
-      <CustomCursor />
+      <Suspense fallback={null}>
+        <CustomCursor />
+      </Suspense>
       <Navbar />
       <main>
         <HeroSection />
-        <HowItWorks />
-        <TerritorySection />
-        <PainPoints />
-        <FeaturesSection />
-        <StatsBanner />
-        <ExtrasSection />
-        <SocialProof />
-        <PricingSection />
-        <CtaSection />
+        <Suspense fallback={<div className="h-96" />}>
+          <HowItWorks />
+          <TerritorySection />
+          <PainPoints />
+          <FeaturesSection />
+          <StatsBanner />
+          <ExtrasSection />
+          <SocialProof />
+          <PricingSection />
+          <CtaSection />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
