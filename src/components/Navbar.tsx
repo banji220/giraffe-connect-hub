@@ -13,23 +13,24 @@ const BrutalButton = ({
   children,
   variant = "primary",
   className = "",
-  ...props
+  onClick,
 }: {
   children: React.ReactNode;
   variant?: "primary" | "outline";
   className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+  onClick?: () => void;
+}) => (
   <motion.button
     whileHover={{ y: -2, boxShadow: "2px 2px 0px #000" }}
     whileTap={{ y: 0, boxShadow: "0px 0px 0px #000" }}
     transition={{ type: "spring", stiffness: 500, damping: 15 }}
+    onClick={onClick}
     className={`rounded-2xl border-3 border-foreground px-6 py-3 font-heading font-bold text-sm transition-colors ${
       variant === "primary"
         ? "bg-electric-blue text-white shadow-brutal"
         : "bg-transparent text-foreground shadow-brutal"
     } ${className}`}
     style={{ borderWidth: "3px" }}
-    {...props}
   >
     {children}
   </motion.button>
