@@ -67,7 +67,7 @@ export default function HeroSection() {
                 className="absolute bottom-1 left-0 -z-0 h-3 w-full origin-left bg-brand-yellow md:h-4"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ delay: 0.8, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.8, duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
               />
             </span>
             <br />
