@@ -43,7 +43,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b-3 border-foreground bg-brand-black" style={{ borderBottomWidth: "3px" }}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         <a href="#" className="flex items-center gap-2">
-          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto" />
+          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto brightness-0 invert drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]" />
           <span className="font-heading text-xl font-bold text-brand-yellow">Giraffe CRM</span>
         </a>
 

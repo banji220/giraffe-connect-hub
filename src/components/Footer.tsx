@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-foreground px-5 py-12 text-background">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-between">
         <div className="flex items-center gap-2">
-          <img src={giraffeLogo} alt="Giraffe CRM" className="h-8 w-auto" />
+          <img src={giraffeLogo} alt="Giraffe CRM" className="h-8 w-auto brightness-0 invert drop-shadow-[0_0_1px_rgba(255,255,255,0.8)]" />
           <span className="font-heading text-lg font-bold">Giraffe CRM</span>
         </div>
 
