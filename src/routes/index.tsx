@@ -1,19 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import CustomCursor from "@/components/CustomCursor";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import PainPoints from "@/components/PainPoints";
+import FeaturesSection from "@/components/FeaturesSection";
+import HowItWorks from "@/components/HowItWorks";
+import SocialProof from "@/components/SocialProof";
+import PricingSection from "@/components/PricingSection";
+import Footer from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Giraffe CRM — Built for the Boots on the Ground" },
+      { name: "description", content: "Mobile-first CRM for door-to-door sales. Fast lead capture, GPS auto-fill, auto-pricing, and route tracking." },
+      { property: "og:title", content: "Giraffe CRM — Built for the Boots on the Ground" },
+      { property: "og:description", content: "The CRM built for door knockers. Quote on the spot, capture leads in seconds." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="cursor-none">
+      <CustomCursor />
+      <Navbar />
+      <HeroSection />
+      <PainPoints />
+      <FeaturesSection />
+      <HowItWorks />
+      <SocialProof />
+      <PricingSection />
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
