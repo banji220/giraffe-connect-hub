@@ -1,5 +1,4 @@
 import { BrutalButton } from "./Navbar";
-import giraffePeeking from "@/assets/giraffe-peeking.png";
 
 export default function CtaSection() {
   return (
@@ -20,15 +19,6 @@ export default function CtaSection() {
           </p>
         </div>
       </div>
-
-      <img
-        src={giraffePeeking}
-        alt="Cartoon giraffe peeking"
-        width={600}
-        height={800}
-        loading="lazy"
-        className="absolute -bottom-8 right-0 z-0 hidden w-40 opacity-80 md:block md:w-56"
-      />
     </section>
   );
 }
