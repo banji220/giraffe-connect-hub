@@ -104,9 +104,9 @@
 
   /* ── Surfaces ── */
   --card: oklch(0.18 0.005 280);               /* #1C1C22 — elevated charcoal */
-  --card-foreground: oklch(0.93 0.008 75);
+  --card-foreground: oklch(0.95 0.005 80);
   --popover: oklch(0.18 0.005 280);
-  --popover-foreground: oklch(0.93 0.008 75);
+  --popover-foreground: oklch(0.95 0.005 80);
 
   /* ── Primary = Champagne Gold ── */
   --primary: oklch(0.75 0.09 85);              /* #C4A265 — champagne gold */
@@ -118,7 +118,7 @@
 
   /* ── Muted ── */
   --muted: oklch(0.20 0.004 280);              /* #1E1E26 — dark surface */
-  --muted-foreground: oklch(0.58 0.01 280);    /* #8A8690 — warm slate */
+  --muted-foreground: oklch(0.65 0.008 280);    /* #9A96A0 — brighter warm slate */
 
   /* ── Accent = Deep Navy ── */
   --accent: oklch(0.25 0.035 255);             /* #2A3040 — deep navy */
