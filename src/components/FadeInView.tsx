@@ -1,5 +1,5 @@
+import { type ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useEffect, useState, type ReactNode } from "react";
 
 export default function FadeInView({
   children,
@@ -23,8 +23,7 @@ export default function FadeInView({
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true, amount: 0.1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ delay, duration: 0.5 }}
       className={className}
     >
