@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { DoorOpen, ClipboardCheck, BadgeDollarSign } from "lucide-react";
+import { DoorOpen, ClipboardCheck, BadgeDollarSign, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -38,7 +38,7 @@ export default function HowItWorks() {
           Three steps. That&rsquo;s it.
         </motion.h2>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-6">
           {steps.map((s, i) => (
             <motion.div
               key={s.title}
@@ -48,12 +48,14 @@ export default function HowItWorks() {
               transition={{ delay: i * 0.15 }}
               className="relative"
             >
-              {/* Step connector line (desktop) */}
+              {/* Arrow connector (desktop only) */}
               {i < steps.length - 1 && (
-                <div className="absolute right-0 top-1/2 hidden h-0.5 w-6 -translate-y-1/2 translate-x-full bg-foreground md:block" />
+                <div className="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 text-foreground md:block">
+                  <ArrowRight size={20} />
+                </div>
               )}
               <div
-                className="rounded-2xl border-foreground bg-card p-6"
+                className="h-full rounded-2xl border-foreground bg-card p-6"
                 style={{ borderWidth: "3px", boxShadow: "4px 4px 0px #000" }}
               >
                 <span
