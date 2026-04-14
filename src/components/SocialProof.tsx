@@ -27,13 +27,10 @@ export default function SocialProof() {
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <FadeInView key={t.name} delay={i * 0.1}>
-              <div
-                className="rounded-2xl bg-card p-6"
-                style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F" }}
-              >
+              <div className="rounded-xl border border-border/50 bg-card p-6 transition-all duration-300 hover:border-gold/25">
                 <div className="mb-3 flex gap-1">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={16} className="fill-brand-yellow text-brand-yellow" />
+                    <Star key={j} size={14} className="fill-gold text-gold" />
                   ))}
                 </div>
                 <p className="mb-4 text-sm italic text-muted-foreground">
@@ -48,13 +45,10 @@ export default function SocialProof() {
           ))}
 
           <FadeInView delay={0.2}>
-            <div
-              className="flex h-full flex-col items-center justify-center rounded-2xl bg-emerald-primary p-6 text-white"
-              style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F" }}
-            >
-              <Zap size={32} className="mb-2" />
+            <div className="flex h-full flex-col items-center justify-center rounded-xl border border-gold/20 bg-gold/[0.06] p-6 text-gold">
+              <Zap size={28} className="mb-2" strokeWidth={1.8} />
               <span className="font-heading text-4xl font-bold">3×</span>
-              <span className="mt-1 font-heading text-sm font-medium">Faster Quoting</span>
+              <span className="mt-1 font-heading text-sm font-medium text-gold/80">Faster Quoting</span>
             </div>
           </FadeInView>
         </div>
