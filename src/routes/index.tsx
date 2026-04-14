@@ -7,6 +7,7 @@ import TerritorySection from "@/components/TerritorySection";
 import PainPoints from "@/components/PainPoints";
 import FeaturesSection from "@/components/FeaturesSection";
 import StatsBanner from "@/components/StatsBanner";
+import ExtrasSection from "@/components/ExtrasSection";
 import SocialProof from "@/components/SocialProof";
 import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
@@ -35,6 +36,7 @@ function Index() {
         <PainPoints />
         <FeaturesSection />
         <StatsBanner />
+        <ExtrasSection />
         <SocialProof />
         <PricingSection />
       </main>
