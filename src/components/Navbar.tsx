@@ -27,8 +27,8 @@ const BrutalButton = ({
     onClick={onClick}
     className={`rounded-2xl border-3 border-foreground px-6 py-3 font-heading font-bold text-sm transition-colors ${
       variant === "primary"
-        ? "bg-electric-blue text-white shadow-brutal"
-        : "bg-transparent text-foreground shadow-brutal"
+        ? "bg-emerald-primary text-foreground shadow-brutal"
+        : "bg-white text-foreground shadow-brutal"
     } ${className}`}
     style={{ borderWidth: "3px" }}
   >
