@@ -1,8 +1,28 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* Font loaded via <link preload> in __root.tsx instead of blocking @import */
+/* Font loaded via <link> in __root.tsx */
 
 @custom-variant dark (&:is(.dark *));
+
+/*
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  GIRAFFE CRM — Ultra-Luxury Color System                    ║
+  ║                                                              ║
+  ║  Aesthetic: Dark obsidian base with champagne gold accents.  ║
+  ║  Inspired by Amex Black, Rolls-Royce, and private banking.  ║
+  ║  Every surface is dark, every accent is gold, every detail   ║
+  ║  whispers premium.                                           ║
+  ║                                                              ║
+  ║  Primary BG:       #141418  Deep obsidian                    ║
+  ║  Secondary BG:     #1C1C22  Elevated charcoal                ║
+  ║  Primary Text:     #F0EDE6  Warm ivory                       ║
+  ║  Secondary Text:   #8A8690  Warm slate                       ║
+  ║  Accent (Gold):    #C4A265  Champagne gold                   ║
+  ║  Secondary Accent: #2A3040  Deep navy                        ║
+  ║  Border/Divider:   #2A2A32  Subtle charcoal                  ║
+  ║  Hover State:      Gold glow + subtle lift                   ║
+  ╚══════════════════════════════════════════════════════════════╝
+*/
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -46,66 +66,99 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-brand-yellow: var(--brand-yellow);
-  --color-brand-black: var(--brand-black);
-  --color-electric-blue: var(--electric-blue);
-  --color-pastel-yellow: var(--pastel-yellow);
-  --color-coral: var(--coral);
-  --color-mint: var(--mint);
-  --color-emerald-primary: var(--emerald-primary);
+  /* Brand tokens */
+  --color-gold: var(--gold);
+  --color-gold-muted: var(--gold-muted);
+  --color-gold-bright: var(--gold-bright);
+  --color-obsidian: var(--obsidian);
+  --color-charcoal: var(--charcoal);
+  --color-ivory: var(--ivory);
+  --color-slate-warm: var(--slate-warm);
+  --color-navy-deep: var(--navy-deep);
+
+  /* Legacy aliases — mapped to luxury palette */
+  --color-brand-yellow: var(--gold);
+  --color-brand-black: var(--obsidian);
+  --color-electric-blue: var(--navy-deep);
+  --color-pastel-yellow: var(--gold-muted);
+  --color-coral: var(--gold);
+  --color-mint: var(--slate-warm);
+  --color-emerald-primary: var(--gold);
 
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
 
-  --shadow-brutal: 4px 4px 0px #000;
-  --shadow-brutal-sm: 2px 2px 0px #000;
-  --shadow-brutal-lg: 6px 6px 0px #000;
-  --shadow-brutal-hover: 2px 2px 0px #000;
+  --shadow-luxury-sm: 0 2px 8px oklch(0 0 0 / 0.3);
+  --shadow-luxury: 0 8px 30px oklch(0 0 0 / 0.4);
+  --shadow-luxury-lg: 0 20px 60px oklch(0 0 0 / 0.5);
+  --shadow-gold-glow: 0 0 20px oklch(0.75 0.09 85 / 0.15);
+  --shadow-gold-hover: 0 8px 30px oklch(0.75 0.09 85 / 0.12);
 }
 
 :root {
-  --radius: 1rem;
-  /* Warm & earthy palette */
-  --background: oklch(0.96 0.012 70);       /* warm cream */
-  --foreground: oklch(0.22 0.02 50);         /* dark espresso */
-  --card: oklch(0.97 0.01 75);               /* soft linen */
-  --card-foreground: oklch(0.22 0.02 50);
-  --popover: oklch(0.97 0.01 75);
-  --popover-foreground: oklch(0.22 0.02 50);
-  --primary: oklch(0.55 0.14 40);            /* terracotta */
-  --primary-foreground: oklch(0.98 0.005 80);
-  --secondary: oklch(0.90 0.04 75);          /* warm sand */
-  --secondary-foreground: oklch(0.22 0.02 50);
-  --muted: oklch(0.92 0.015 70);             /* soft taupe */
-  --muted-foreground: oklch(0.50 0.02 55);
-  --accent: oklch(0.82 0.10 80);             /* golden wheat */
-  --accent-foreground: oklch(0.22 0.02 50);
-  --destructive: oklch(0.55 0.20 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.25 0.02 50);             /* dark espresso border */
-  --input: oklch(0.25 0.02 50);
-  --ring: oklch(0.55 0.14 40);
-  --chart-1: oklch(0.55 0.14 40);            /* terracotta */
-  --chart-2: oklch(0.60 0.10 160);           /* sage */
-  --chart-3: oklch(0.45 0.06 50);            /* dark clay */
-  --chart-4: oklch(0.78 0.12 80);            /* amber */
-  --chart-5: oklch(0.70 0.08 55);            /* sienna */
-  --sidebar: oklch(0.95 0.01 70);
-  --sidebar-foreground: oklch(0.22 0.02 50);
-  --sidebar-primary: oklch(0.55 0.14 40);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.90 0.04 75);
-  --sidebar-accent-foreground: oklch(0.22 0.02 50);
-  --sidebar-border: oklch(0.25 0.02 50);
-  --sidebar-ring: oklch(0.55 0.14 40);
+  --radius: 0.75rem;
 
-  --brand-yellow: oklch(0.78 0.12 80);       /* warm amber */
-  --brand-black: oklch(0.22 0.02 50);        /* espresso */
-  --electric-blue: oklch(0.55 0.14 40);      /* terracotta (replaces blue) */
-  --pastel-yellow: oklch(0.92 0.06 82);      /* soft cream-gold */
-  --coral: oklch(0.58 0.16 35);              /* burnt sienna */
-  --mint: oklch(0.80 0.06 150);              /* sage green */
-  --emerald-primary: oklch(0.55 0.14 40);    /* terracotta (primary action) */
+  /* ── Backgrounds ── */
+  --background: oklch(0.15 0.005 280);        /* #141418 — deep obsidian */
+  --foreground: oklch(0.93 0.008 75);          /* #F0EDE6 — warm ivory */
+
+  /* ── Surfaces ── */
+  --card: oklch(0.18 0.005 280);               /* #1C1C22 — elevated charcoal */
+  --card-foreground: oklch(0.93 0.008 75);
+  --popover: oklch(0.18 0.005 280);
+  --popover-foreground: oklch(0.93 0.008 75);
+
+  /* ── Primary = Champagne Gold ── */
+  --primary: oklch(0.75 0.09 85);              /* #C4A265 — champagne gold */
+  --primary-foreground: oklch(0.13 0.005 280); /* near-black */
+
+  /* ── Secondary ── */
+  --secondary: oklch(0.22 0.005 280);          /* #2A2A32 — soft charcoal */
+  --secondary-foreground: oklch(0.85 0.006 75); /* warm off-white */
+
+  /* ── Muted ── */
+  --muted: oklch(0.20 0.004 280);              /* #1E1E26 — dark surface */
+  --muted-foreground: oklch(0.58 0.01 280);    /* #8A8690 — warm slate */
+
+  /* ── Accent = Deep Navy ── */
+  --accent: oklch(0.25 0.035 255);             /* #2A3040 — deep navy */
+  --accent-foreground: oklch(0.90 0.006 75);
+
+  /* ── Destructive ── */
+  --destructive: oklch(0.50 0.15 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* ── Borders — ultra-subtle ── */
+  --border: oklch(0.25 0.005 280);             /* #2A2A32 — charcoal divider */
+  --input: oklch(0.25 0.005 280);
+  --ring: oklch(0.75 0.09 85);                 /* gold ring */
+
+  /* ── Charts ── */
+  --chart-1: oklch(0.75 0.09 85);              /* gold */
+  --chart-2: oklch(0.45 0.05 255);             /* navy */
+  --chart-3: oklch(0.55 0.008 280);            /* steel gray */
+  --chart-4: oklch(0.65 0.06 80);              /* warm tan */
+  --chart-5: oklch(0.50 0.04 35);              /* muted copper */
+
+  /* ── Sidebar ── */
+  --sidebar: oklch(0.13 0.005 280);
+  --sidebar-foreground: oklch(0.90 0.006 75);
+  --sidebar-primary: oklch(0.75 0.09 85);
+  --sidebar-primary-foreground: oklch(0.13 0.005 280);
+  --sidebar-accent: oklch(0.20 0.01 280);
+  --sidebar-accent-foreground: oklch(0.90 0.006 75);
+  --sidebar-border: oklch(0.22 0.005 280);
+  --sidebar-ring: oklch(0.75 0.09 85);
+
+  /* ── Brand tokens ── */
+  --gold: oklch(0.75 0.09 85);                 /* #C4A265 — champagne gold */
+  --gold-muted: oklch(0.35 0.04 85);           /* dark gold for subtle bg tints */
+  --gold-bright: oklch(0.82 0.10 85);          /* #D4B87A — lighter gold for highlights */
+  --obsidian: oklch(0.13 0.005 280);           /* #111115 — deepest dark */
+  --charcoal: oklch(0.18 0.005 280);           /* #1C1C22 — card surface */
+  --ivory: oklch(0.93 0.008 75);               /* #F0EDE6 — warm ivory */
+  --slate-warm: oklch(0.45 0.008 280);         /* #5A5A68 — warm slate */
+  --navy-deep: oklch(0.25 0.04 255);           /* #2A3050 — deep muted navy */
 }
 
 @layer base {
@@ -124,7 +177,7 @@
   }
 }
 
-/* Hero CSS animations — replaces framer-motion */
+/* Hero CSS animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -155,12 +208,12 @@
   50% { transform: translateY(-8px); }
 }
 
-@keyframes blobPulse {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(10deg); }
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-@keyframes blobFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-5deg); }
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.6; }
 }
