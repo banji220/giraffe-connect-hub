@@ -40,7 +40,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b-3 border-foreground bg-brand-black" style={{ borderBottomWidth: "3px" }}>
+    <nav className="sticky top-0 z-50 border-b-3 border-foreground bg-foreground" style={{ borderBottomWidth: "3px" }}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         <a href="#" className="flex items-center gap-2">
           <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto" />
@@ -78,7 +78,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-white/10 bg-brand-black md:hidden"
+            className="overflow-hidden border-t border-white/10 bg-foreground md:hidden"
           >
             <div className="flex flex-col gap-4 px-5 py-4">
               {navLinks.map((l) => (
