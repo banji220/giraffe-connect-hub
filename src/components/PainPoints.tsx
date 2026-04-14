@@ -6,19 +6,16 @@ const pains = [
     icon: FileX,
     title: "Paper notes get lost",
     desc: "Scribbled addresses vanish by Monday. Your pipeline shouldn't live on a napkin.",
-    bg: "bg-pastel-yellow",
   },
   {
     icon: Clock,
     title: "Generic CRMs waste your time",
     desc: "Built for desk jockeys, not door knockers. Too many clicks, zero field context.",
-    bg: "bg-coral",
   },
   {
     icon: UserX,
     title: "No-shows kill your day",
     desc: "Forgotten follow-ups mean lost jobs. Every missed callback is money gone.",
-    bg: "bg-mint",
   },
 ];
 
@@ -36,12 +33,13 @@ export default function PainPoints() {
           {pains.map((p, i) => (
             <FadeInView key={p.title} delay={i * 0.1}>
               <div
-                className={`rounded-2xl ${p.bg} p-6`}
-                style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F" }}
+                className="rounded-2xl bg-card border border-border/50 p-6 transition-all duration-300 hover:border-brand-gold/30"
               >
-                <p.icon size={32} className="mb-4" />
+                <div className="mb-4 inline-flex rounded-xl bg-brand-gold/10 p-3 text-brand-gold">
+                  <p.icon size={28} strokeWidth={2} />
+                </div>
                 <h3 className="mb-2 font-heading text-xl font-bold">{p.title}</h3>
-                <p className="text-sm text-foreground/70">{p.desc}</p>
+                <p className="text-sm text-muted-foreground">{p.desc}</p>
               </div>
             </FadeInView>
           ))}
