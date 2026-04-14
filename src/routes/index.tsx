@@ -23,15 +23,17 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="cursor-none">
+    <div className="cursor-none overflow-x-hidden">
       <CustomCursor />
       <Navbar />
-      <HeroSection />
-      <PainPoints />
-      <FeaturesSection />
-      <HowItWorks />
-      <SocialProof />
-      <PricingSection />
+      <main>
+        <HeroSection />
+        <PainPoints />
+        <FeaturesSection />
+        <HowItWorks />
+        <SocialProof />
+        <PricingSection />
+      </main>
       <Footer />
     </div>
   );
