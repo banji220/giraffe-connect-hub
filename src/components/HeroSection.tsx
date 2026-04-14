@@ -3,42 +3,41 @@ import { Sparkles, ArrowRight, MapPin, Star, CheckCircle } from "lucide-react";
 
 function PhoneMockup() {
   const pins = [
-    { x: "28%", y: "38%", color: "bg-coral", label: "$120" },
-    { x: "55%", y: "30%", color: "bg-brand-yellow", label: "$85" },
-    { x: "68%", y: "52%", color: "bg-emerald-primary", label: "$200" },
-    { x: "35%", y: "60%", color: "bg-coral", label: "$150" },
-    { x: "50%", y: "72%", color: "bg-brand-yellow", label: "$95" },
+    { x: "28%", y: "38%", color: "bg-brand-gold", label: "$120" },
+    { x: "55%", y: "30%", color: "bg-brand-champagne", label: "$85" },
+    { x: "68%", y: "52%", color: "bg-brand-deep-navy", label: "$200" },
+    { x: "35%", y: "60%", color: "bg-brand-gold", label: "$150" },
+    { x: "50%", y: "72%", color: "bg-brand-champagne", label: "$95" },
   ];
 
   return (
     <div className="relative mx-auto w-[260px] md:w-[300px] lg:w-[320px]">
       <div
-        className="relative overflow-hidden rounded-[2.5rem] bg-foreground p-2"
-        style={{ boxShadow: "12px 12px 0px #0F0F0F" }}
+        className="relative overflow-hidden rounded-[2.5rem] bg-brand-obsidian p-2"
+        style={{ boxShadow: "0 25px 60px oklch(0.78 0.10 85 / 0.15), 0 0 0 1px oklch(0.78 0.10 85 / 0.1)" }}
       >
-        <div className="relative overflow-hidden rounded-[2rem] bg-background">
-          <div className="flex items-center justify-between px-5 py-2 text-[10px] font-bold text-foreground/60">
+        <div className="relative overflow-hidden rounded-[2rem] bg-secondary">
+          <div className="flex items-center justify-between px-5 py-2 text-[10px] font-bold text-foreground/40">
             <span>9:41</span>
-            <div className="mx-auto h-5 w-20 rounded-full bg-foreground" />
+            <div className="mx-auto h-5 w-20 rounded-full bg-brand-obsidian" />
             <span>100%</span>
           </div>
 
-          <div className="bg-brand-black px-4 py-2">
-            <p className="font-heading text-xs font-bold text-brand-yellow">🦒 Giraffe CRM</p>
-            <p className="text-[10px] text-white/60">12 leads today</p>
+          <div className="bg-brand-obsidian px-4 py-2">
+            <p className="font-heading text-xs font-bold text-brand-gold">🦒 Giraffe CRM</p>
+            <p className="text-[10px] text-foreground/40">12 leads today</p>
           </div>
 
-          <div className="relative h-[240px] md:h-[280px] bg-pastel-yellow/30">
-            <svg className="absolute inset-0 h-full w-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+          <div className="relative h-[240px] md:h-[280px] bg-secondary">
+            <svg className="absolute inset-0 h-full w-full opacity-10" xmlns="http://www.w3.org/2000/svg">
               {[...Array(8)].map((_, i) => (
                 <line key={`h${i}`} x1="0" y1={`${(i + 1) * 12.5}%`} x2="100%" y2={`${(i + 1) * 12.5}%`} stroke="currentColor" strokeWidth="0.5" />
               ))}
               {[...Array(6)].map((_, i) => (
                 <line key={`v${i}`} x1={`${(i + 1) * 16.6}%`} y1="0" x2={`${(i + 1) * 16.6}%`} y2="100%" stroke="currentColor" strokeWidth="0.5" />
               ))}
-              <line x1="0" y1="45%" x2="100%" y2="45%" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-              <line x1="40%" y1="0" x2="40%" y2="100%" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-              <line x1="10%" y1="70%" x2="80%" y2="25%" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
+              <line x1="0" y1="45%" x2="100%" y2="45%" stroke="currentColor" strokeWidth="2" opacity="0.2" />
+              <line x1="40%" y1="0" x2="40%" y2="100%" stroke="currentColor" strokeWidth="2" opacity="0.2" />
             </svg>
 
             {pins.map((pin, i) => (
@@ -49,8 +48,8 @@ function PhoneMockup() {
               >
                 <div className="relative -translate-x-1/2">
                   <div
-                    className={`${pin.color} flex items-center gap-0.5 rounded-full px-2 py-0.5 font-heading text-[9px] font-bold text-white`}
-                    style={{ borderWidth: "1.5px", borderColor: "#0F0F0F", boxShadow: "2px 2px 0px #0F0F0F" }}
+                    className={`${pin.color} flex items-center gap-0.5 rounded-full px-2 py-0.5 font-heading text-[9px] font-bold text-brand-obsidian`}
+                    style={{ boxShadow: "0 2px 8px oklch(0 0 0 / 0.3)" }}
                   >
                     <MapPin size={8} />
                     {pin.label}
@@ -61,31 +60,24 @@ function PhoneMockup() {
             ))}
           </div>
 
-          <div className="border-t-2 border-foreground bg-white p-3">
+          <div className="border-t border-border bg-card p-3">
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-heading text-[11px] font-bold">42 Elm Street</p>
+                <p className="font-heading text-[11px] font-bold text-foreground">42 Elm Street</p>
                 <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
-                  <Star size={8} className="fill-brand-yellow text-brand-yellow" />
+                  <Star size={8} className="fill-brand-gold text-brand-gold" />
                   <span>Hot lead · 6 windows</span>
                 </div>
               </div>
-              <div
-                className="rounded-xl bg-coral px-2.5 py-1 font-heading text-[10px] font-bold text-white"
-                style={{ borderWidth: "1.5px", borderColor: "#0F0F0F", boxShadow: "2px 2px 0px #0F0F0F" }}
-              >
+              <div className="rounded-lg bg-brand-gold px-2.5 py-1 font-heading text-[10px] font-bold text-brand-obsidian">
                 $120
               </div>
             </div>
             <div className="mt-2 flex gap-1.5">
-              <div className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-emerald-primary py-1.5 font-heading text-[9px] font-bold text-white"
-                style={{ borderWidth: "1.5px", borderColor: "#0F0F0F" }}
-              >
+              <div className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-brand-gold py-1.5 font-heading text-[9px] font-bold text-brand-obsidian">
                 <CheckCircle size={10} /> Close Deal
               </div>
-              <div className="flex flex-1 items-center justify-center rounded-lg bg-pastel-yellow py-1.5 font-heading text-[9px] font-bold"
-                style={{ borderWidth: "1.5px", borderColor: "#0F0F0F" }}
-              >
+              <div className="flex flex-1 items-center justify-center rounded-lg bg-secondary py-1.5 font-heading text-[9px] font-bold text-foreground/70 border border-border">
                 Follow Up
               </div>
             </div>
@@ -99,20 +91,16 @@ function PhoneMockup() {
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden px-5 py-16 md:py-24 lg:py-32">
-      {/* Decorative shapes — pure CSS animation */}
-      <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-pastel-yellow opacity-60 animate-[blobPulse_8s_ease-in-out_infinite]" />
-      <div
-        className="absolute -bottom-10 right-10 hidden h-40 w-40 rounded-3xl bg-mint opacity-40 md:block animate-[blobFloat_6s_ease-in-out_infinite]"
-        style={{ borderWidth: "3px", borderColor: "#0F0F0F" }}
-      />
+      {/* Decorative shapes — luxury subtle glow */}
+      <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-brand-gold/5 blur-3xl animate-[blobPulse_8s_ease-in-out_infinite]" />
+      <div className="absolute -bottom-20 right-0 hidden h-60 w-60 rounded-full bg-brand-deep-navy/10 blur-2xl md:block animate-[blobFloat_6s_ease-in-out_infinite]" />
 
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
         {/* Left: Copy */}
         <div>
           <div className="animate-[fadeUp_0.6s_ease-out_both]">
             <span
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-pastel-yellow px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wider"
-              style={{ borderWidth: "2px", borderColor: "#0F0F0F", boxShadow: "3px 3px 0px #0F0F0F" }}
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-gold/10 px-4 py-1.5 font-heading text-xs font-bold uppercase tracking-wider text-brand-gold border border-brand-gold/20"
             >
               <Sparkles size={14} strokeWidth={2.5} />
               Built for door knockers
@@ -120,17 +108,17 @@ export default function HeroSection() {
           </div>
 
           <h1
-            className="mt-6 font-heading text-5xl font-bold leading-[1.08] md:text-6xl lg:text-7xl animate-[fadeUp_0.6s_ease-out_0.15s_both]"
+            className="mt-6 font-heading text-5xl font-bold leading-[1.08] md:text-6xl lg:text-7xl text-foreground animate-[fadeUp_0.6s_ease-out_0.15s_both]"
           >
             Knock. Quote.{" "}
             <span className="relative inline-block">
               <span className="relative z-10">Close.</span>
               <span
-                className="absolute bottom-1 left-0 -z-0 h-3 w-full origin-left bg-brand-yellow md:h-4 animate-[scaleX_0.5s_ease-out_0.8s_both]"
+                className="absolute bottom-1 left-0 -z-0 h-3 w-full origin-left bg-brand-gold/30 md:h-4 animate-[scaleX_0.5s_ease-out_0.8s_both]"
               />
             </span>
             <br />
-            <span className="text-coral">Under 60s.</span>
+            <span className="text-brand-gold">Under 60s.</span>
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg animate-[fadeUp_0.6s_ease-out_0.3s_both]">
@@ -149,18 +137,17 @@ export default function HeroSection() {
           {/* Social proof micro-strip */}
           <div className="mt-8 flex items-center gap-3 animate-[fadeUp_0.6s_ease-out_0.6s_both]">
             <div className="flex -space-x-2">
-              {["bg-coral", "bg-brand-yellow", "bg-emerald-primary"].map((bg, i) => (
+              {["bg-brand-gold", "bg-brand-champagne", "bg-brand-deep-navy"].map((bg, i) => (
                 <div
                   key={i}
-                  className={`h-8 w-8 rounded-full ${bg} flex items-center justify-center font-heading text-xs font-bold text-white`}
-                  style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
+                  className={`h-8 w-8 rounded-full ${bg} flex items-center justify-center font-heading text-xs font-bold ${i === 2 ? "text-foreground" : "text-brand-obsidian"} border border-border/50`}
                 >
                   {["JK", "MA", "TS"][i]}
                 </div>
               ))}
             </div>
             <p className="text-xs text-muted-foreground">
-              <span className="font-bold text-foreground">2,400+</span> window cleaners already knocking
+              <span className="font-bold text-brand-gold">2,400+</span> window cleaners already knocking
             </p>
           </div>
         </div>
@@ -169,16 +156,16 @@ export default function HeroSection() {
         <div className="relative">
           {/* Floating badge */}
           <div
-            className="absolute -right-2 -top-3 z-30 rounded-2xl bg-coral px-4 py-2 font-heading text-sm font-bold text-white md:-right-6 md:-top-5 md:text-base animate-[badgePop_0.5s_ease-out_0.9s_both]"
-            style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F", rotate: "-3deg" }}
+            className="absolute -right-2 -top-3 z-30 rounded-xl bg-brand-gold px-4 py-2 font-heading text-sm font-bold text-brand-obsidian md:-right-6 md:-top-5 md:text-base animate-[badgePop_0.5s_ease-out_0.9s_both]"
+            style={{ boxShadow: "0 8px 24px oklch(0.78 0.10 85 / 0.3)", rotate: "-3deg" }}
           >
             +328% close rate 🔥
           </div>
 
           {/* Second badge */}
           <div
-            className="absolute -left-2 bottom-20 z-30 rounded-2xl bg-pastel-yellow px-3 py-2 font-heading text-xs font-bold md:-left-6 md:text-sm animate-[badgePop_0.5s_ease-out_1.1s_both]"
-            style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F", rotate: "3deg" }}
+            className="absolute -left-2 bottom-20 z-30 rounded-xl bg-secondary px-3 py-2 font-heading text-xs font-bold text-brand-gold border border-brand-gold/20 md:-left-6 md:text-sm animate-[badgePop_0.5s_ease-out_1.1s_both]"
+            style={{ boxShadow: "0 8px 24px oklch(0 0 0 / 0.3)", rotate: "3deg" }}
           >
             ⚡ Quote in 3 taps
           </div>
