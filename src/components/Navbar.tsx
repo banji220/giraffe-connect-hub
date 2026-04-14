@@ -45,13 +45,6 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-2">
           <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto" />
           <span className="font-heading text-xl font-bold text-brand-yellow">Giraffe CRM</span>
-          <motion.span
-            className="text-xl"
-            whileHover={{ rotate: [0, -5, 5, -5, 5, 0] }}
-            transition={{ duration: 0.5 }}
-          >
-            🦒
-          </motion.span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
