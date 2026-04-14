@@ -65,48 +65,47 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.97 0.008 75);
-  --foreground: oklch(0.18 0.01 60);
-  --card: oklch(0.99 0.005 80);
-  --card-foreground: oklch(0.18 0.01 60);
-  --popover: oklch(0.99 0.005 80);
-  --popover-foreground: oklch(0.18 0.01 60);
-  --primary: oklch(0.65 0.20 45);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.93 0.05 80);
-  --secondary-foreground: oklch(0.18 0.01 60);
-  --muted: oklch(0.94 0.01 75);
-  --muted-foreground: oklch(0.45 0.01 60);
-  --accent: oklch(0.93 0.05 80);
-  --accent-foreground: oklch(0.18 0.01 60);
-  --destructive: oklch(0.577 0.245 27.325);
+  /* Warm & earthy palette */
+  --background: oklch(0.96 0.012 70);       /* warm cream */
+  --foreground: oklch(0.22 0.02 50);         /* dark espresso */
+  --card: oklch(0.97 0.01 75);               /* soft linen */
+  --card-foreground: oklch(0.22 0.02 50);
+  --popover: oklch(0.97 0.01 75);
+  --popover-foreground: oklch(0.22 0.02 50);
+  --primary: oklch(0.55 0.14 40);            /* terracotta */
+  --primary-foreground: oklch(0.98 0.005 80);
+  --secondary: oklch(0.90 0.04 75);          /* warm sand */
+  --secondary-foreground: oklch(0.22 0.02 50);
+  --muted: oklch(0.92 0.015 70);             /* soft taupe */
+  --muted-foreground: oklch(0.50 0.02 55);
+  --accent: oklch(0.82 0.10 80);             /* golden wheat */
+  --accent-foreground: oklch(0.22 0.02 50);
+  --destructive: oklch(0.55 0.20 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.18 0.01 60);
-  --input: oklch(0.18 0.01 60);
-  --ring: oklch(0.65 0.20 45);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.98 0.005 90);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(0.488 0.217 264);
+  --border: oklch(0.25 0.02 50);             /* dark espresso border */
+  --input: oklch(0.25 0.02 50);
+  --ring: oklch(0.55 0.14 40);
+  --chart-1: oklch(0.55 0.14 40);            /* terracotta */
+  --chart-2: oklch(0.60 0.10 160);           /* sage */
+  --chart-3: oklch(0.45 0.06 50);            /* dark clay */
+  --chart-4: oklch(0.78 0.12 80);            /* amber */
+  --chart-5: oklch(0.70 0.08 55);            /* sienna */
+  --sidebar: oklch(0.95 0.01 70);
+  --sidebar-foreground: oklch(0.22 0.02 50);
+  --sidebar-primary: oklch(0.55 0.14 40);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.93 0.06 90);
-  --sidebar-accent-foreground: oklch(0.15 0 0);
-  --sidebar-border: oklch(0.15 0 0);
-  --sidebar-ring: oklch(0.488 0.217 264);
+  --sidebar-accent: oklch(0.90 0.04 75);
+  --sidebar-accent-foreground: oklch(0.22 0.02 50);
+  --sidebar-border: oklch(0.25 0.02 50);
+  --sidebar-ring: oklch(0.55 0.14 40);
 
-  --brand-yellow: oklch(0.87 0.16 85);
-  --brand-black: oklch(0.18 0.01 60);
-  --electric-blue: oklch(0.55 0.22 255);
-  --pastel-yellow: oklch(0.93 0.08 90);
-  --coral: oklch(0.65 0.20 45);
-  --mint: oklch(0.75 0.12 245);
-  --emerald-primary: oklch(0.55 0.22 255);
-  --background: oklch(0.97 0.008 75);
-  --foreground: oklch(0.18 0.01 60);
+  --brand-yellow: oklch(0.78 0.12 80);       /* warm amber */
+  --brand-black: oklch(0.22 0.02 50);        /* espresso */
+  --electric-blue: oklch(0.55 0.14 40);      /* terracotta (replaces blue) */
+  --pastel-yellow: oklch(0.92 0.06 82);      /* soft cream-gold */
+  --coral: oklch(0.58 0.16 35);              /* burnt sienna */
+  --mint: oklch(0.80 0.06 150);              /* sage green */
+  --emerald-primary: oklch(0.55 0.14 40);    /* terracotta (primary action) */
 }
 
 @layer base {
