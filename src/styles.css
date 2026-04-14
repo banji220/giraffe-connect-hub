@@ -100,7 +100,7 @@
 
   /* ── Backgrounds ── */
   --background: oklch(0.15 0.005 280);        /* #141418 — deep obsidian */
-  --foreground: oklch(0.93 0.008 75);          /* #F0EDE6 — warm ivory */
+  --foreground: oklch(0.95 0.005 80);          /* #F5F2EC — bright warm ivory */
 
   /* ── Surfaces ── */
   --card: oklch(0.18 0.005 280);               /* #1C1C22 — elevated charcoal */
