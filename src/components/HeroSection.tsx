@@ -1,4 +1,5 @@
 import { BrutalButton } from "./Navbar";
+import giraffeLogo from "@/assets/giraffe-logo.png";
 import { Sparkles, ArrowRight, MapPin, Star, CheckCircle } from "lucide-react";
 
 function PhoneMockup() {
@@ -26,7 +27,7 @@ function PhoneMockup() {
 
           {/* App header */}
           <div className="bg-obsidian px-4 py-2 border-b border-border/30">
-            <p className="font-heading text-xs font-bold text-gold">🦒 Giraffe CRM</p>
+            <p className="font-heading text-xs font-bold text-gold flex items-center gap-1.5"><img src={giraffeLogo} alt="Giraffe CRM" className="h-4 w-auto brightness-0 invert opacity-90" /> Giraffe CRM</p>
             <p className="text-[10px] text-muted-foreground">12 leads today</p>
           </div>
 
