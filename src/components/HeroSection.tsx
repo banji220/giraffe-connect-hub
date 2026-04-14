@@ -8,7 +8,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: i * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
@@ -18,7 +18,7 @@ const phoneFloat = {
     opacity: 1,
     y: 0,
     rotate: 0,
-    transition: { delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
