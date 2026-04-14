@@ -3,8 +3,8 @@ import { motion, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [visible, setVisible] = useState(false);
-  const x = useSpring(0, { stiffness: 300, damping: 25 });
-  const y = useSpring(0, { stiffness: 300, damping: 25 });
+  const x = useSpring(0, { stiffness: 500, damping: 28 });
+  const y = useSpring(0, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
     const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
@@ -32,7 +32,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-[9999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference"
+      className="pointer-events-none fixed top-0 left-0 z-[9999] h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference"
       style={{ x, y }}
     />
   );

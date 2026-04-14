@@ -6,7 +6,6 @@ export default function HeroSection() {
   return (
     <section className="px-5 py-16 md:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-        {/* Text side */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -18,7 +17,12 @@ export default function HeroSection() {
             <br />
             <span className="relative inline-block">
               <span className="relative z-10">Under 60 seconds.</span>
-              <span className="absolute bottom-1 left-0 -z-0 h-3 w-full bg-pastel-yellow md:h-4" />
+              <motion.span
+                className="absolute bottom-1 left-0 -z-0 h-3 w-full origin-left bg-pastel-yellow md:h-4"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+              />
             </span>
           </h1>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -32,7 +36,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Phone illustration side */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -40,7 +43,6 @@ export default function HeroSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="relative mx-auto w-[320px] md:w-[400px]"
         >
-          {/* Floating badge — sibling, not inside overflow-hidden */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -52,13 +54,12 @@ export default function HeroSection() {
             +328% close rate
           </motion.div>
 
-          {/* Phone + giraffe illustration */}
           <img
             src={heroPhoneGiraffe}
             alt="Giraffe CRM app showing a map with colorful lead pins on a phone, with a cartoon giraffe peeking over"
             width={800}
             height={1024}
-            className="w-full rotate-[0deg] drop-shadow-2xl"
+            className="w-full drop-shadow-2xl"
           />
         </motion.div>
       </div>

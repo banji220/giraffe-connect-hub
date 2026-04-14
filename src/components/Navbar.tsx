@@ -21,16 +21,16 @@ const BrutalButton = ({
   onClick?: () => void;
 }) => (
   <motion.button
-    whileHover={{ y: -2, boxShadow: "2px 2px 0px #000" }}
-    whileTap={{ y: 0, boxShadow: "0px 0px 0px #000" }}
+    whileHover={{ y: 4, x: 4, boxShadow: "4px 4px 0px #0F0F0F" }}
+    whileTap={{ y: 6, x: 6, boxShadow: "2px 2px 0px #0F0F0F" }}
     transition={{ type: "spring", stiffness: 500, damping: 15 }}
     onClick={onClick}
-    className={`rounded-2xl border-3 border-foreground px-6 py-3 font-heading font-bold text-sm transition-colors ${
+    className={`rounded-2xl px-6 py-3 font-heading text-sm font-bold ${
       variant === "primary"
-        ? "bg-emerald-primary text-foreground shadow-brutal"
-        : "bg-white text-foreground shadow-brutal"
+        ? "bg-emerald-primary text-foreground"
+        : "bg-white text-foreground"
     } ${className}`}
-    style={{ borderWidth: "3px" }}
+    style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "8px 8px 0px #0F0F0F" }}
   >
     {children}
   </motion.button>
@@ -45,6 +45,13 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-2">
           <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-10 w-auto" />
           <span className="font-heading text-xl font-bold text-brand-yellow">Giraffe CRM</span>
+          <motion.span
+            className="text-xl"
+            whileHover={{ rotate: [0, -5, 5, -5, 5, 0] }}
+            transition={{ duration: 0.5 }}
+          >
+            🦒
+          </motion.span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
