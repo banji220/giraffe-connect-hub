@@ -1,37 +1,40 @@
+import giraffeLogo from "@/assets/giraffe-logo.png";
+
+const links = [
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Login", href: "#" },
+  { label: "Contact", href: "#" },
+];
+
 export default function Footer() {
   return (
-    <footer className="border-t-3 border-foreground bg-brand-black px-5 py-10" style={{ borderTopWidth: "3px" }}>
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 md:flex-row md:justify-between">
-        <div className="text-center md:text-left">
-          <p className="font-heading text-sm font-bold text-brand-yellow">
-            Giraffe CRM
-          </p>
-          <p className="mt-1 text-xs text-white/60">
-            by{" "}
-            <a
-              href="https://holygiraffe.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline transition-colors hover:text-brand-yellow"
-            >
-              holygiraffe.com
-            </a>
-          </p>
+    <footer className="bg-foreground px-5 py-12 text-background">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-between">
+        <div className="flex items-center gap-2">
+          <img src={giraffeLogo} alt="Giraffe CRM" className="h-8 w-auto" />
+          <span className="font-heading text-lg font-bold">Giraffe CRM</span>
         </div>
-        <div className="flex gap-6">
-          {["Privacy", "Terms", "Contact"].map((l) => (
+
+        <nav className="flex flex-wrap justify-center gap-6">
+          {links.map((l) => (
             <a
-              key={l}
-              href="#"
-              className="text-xs text-white/60 transition-colors hover:text-brand-yellow"
+              key={l.label}
+              href={l.href}
+              className="text-sm text-background/70 transition-colors hover:text-pastel-yellow"
             >
-              {l}
+              {l.label}
             </a>
           ))}
-        </div>
-        <p className="text-xs text-white/40">
-          &copy; {new Date().getFullYear()} Giraffe CRM. All rights reserved.
+        </nav>
+
+        <p className="text-sm text-background/50">
+          Built for the knockers by a knocker.
         </p>
+      </div>
+
+      <div className="mx-auto mt-8 max-w-6xl border-t border-background/10 pt-6 text-center text-xs text-background/40">
+        &copy; 2026 Holy Giraffe
       </div>
     </footer>
   );

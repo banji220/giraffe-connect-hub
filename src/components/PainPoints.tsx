@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeInView from "./FadeInView";
 import { FileX, Clock, UserX } from "lucide-react";
 
 const pains = [
@@ -26,34 +26,24 @@ export default function PainPoints() {
   return (
     <section className="px-5 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl"
-        >
-          Sound familiar?
-        </motion.h2>
+        <FadeInView>
+          <h2 className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl">
+            Sound familiar?
+          </h2>
+        </FadeInView>
 
         <div className="grid gap-6 md:grid-cols-3">
           {pains.map((p, i) => (
-            <motion.div
-              key={p.title}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative"
-            >
+            <FadeInView key={p.title} delay={i * 0.1}>
               <div
-                className={`relative rounded-2xl border-foreground ${p.bg} p-6`}
-                style={{ borderWidth: "3px", boxShadow: "4px 4px 0px #000" }}
+                className={`rounded-2xl ${p.bg} p-6`}
+                style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "4px 4px 0px #0F0F0F" }}
               >
                 <p.icon size={32} className="mb-4" />
                 <h3 className="mb-2 font-heading text-xl font-bold">{p.title}</h3>
                 <p className="text-sm text-foreground/70">{p.desc}</p>
               </div>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
       </div>

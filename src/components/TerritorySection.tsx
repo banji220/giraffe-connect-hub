@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeInView from "./FadeInView";
 import territoryMap from "@/assets/territory-map.png";
 
 const chips = [
@@ -11,13 +11,7 @@ export default function TerritorySection() {
   return (
     <section className="px-5 py-16 md:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-        {/* Text side */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <FadeInView>
           <p className="mb-3 font-heading text-sm font-bold uppercase tracking-widest text-emerald-primary">
             Your territory, finally visible.
           </p>
@@ -33,7 +27,6 @@ export default function TerritorySection() {
             <br /><br />
             Never knock the same door twice. Never miss a follow-up.
           </p>
-
           <div className="mt-6 flex flex-wrap gap-3">
             {chips.map((chip) => (
               <span
@@ -45,15 +38,9 @@ export default function TerritorySection() {
               </span>
             ))}
           </div>
-        </motion.div>
+        </FadeInView>
 
-        {/* Map illustration */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
+        <FadeInView delay={0.2}>
           <img
             src={territoryMap}
             alt="Isometric neighborhood map with color-coded pins and a giraffe walking between houses"
@@ -62,7 +49,7 @@ export default function TerritorySection() {
             loading="lazy"
             className="w-full drop-shadow-xl"
           />
-        </motion.div>
+        </FadeInView>
       </div>
     </section>
   );
