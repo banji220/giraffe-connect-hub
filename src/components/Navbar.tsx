@@ -21,13 +21,23 @@ const BrutalButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`rounded-xl px-6 py-3 font-heading text-sm font-bold tracking-wide transition-all duration-200 ${
+    className={`relative overflow-hidden rounded-xl px-6 py-3 font-heading text-sm font-bold tracking-wide transition-all duration-200 ${
       variant === "primary"
         ? "bg-gold text-obsidian hover:bg-gold-bright hover:shadow-[0_0_20px_oklch(0.75_0.09_85_/_0.25)]"
         : "bg-transparent text-foreground border border-border hover:border-gold/40 hover:text-gold"
     } ${className}`}
   >
-    {children}
+    {variant === "primary" && (
+      <span
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: "linear-gradient(120deg, transparent 30%, oklch(1 0 0 / 0.18) 50%, transparent 70%)",
+          backgroundSize: "200% 100%",
+          animation: "shimmer 3s ease-in-out infinite",
+        }}
+      />
+    )}
+    <span className="relative z-10">{children}</span>
   </button>
 );
 
