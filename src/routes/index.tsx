@@ -34,6 +34,7 @@ function Index() {
         <TerritorySection />
         <PainPoints />
         <FeaturesSection />
+        <StatsBanner />
         <SocialProof />
         <PricingSection />
       </main>
