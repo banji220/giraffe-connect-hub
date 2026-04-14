@@ -1,8 +1,8 @@
 # Project Memory
 
 ## Core
-Bold & playful neo-brutalist style. Warm earthy palette: terracotta, amber, cream, sage. NO GREEN as primary.
-Space Grotesk font. Neo-brutal shadows with 3px borders.
+Ultra-luxury dark aesthetic. Obsidian base #141418, champagne gold accent #C4A265. NO bright/neon/playful colors.
+Space Grotesk font. Subtle borders, gold glow hovers, no neo-brutal shadows.
 
 ## Memories
-- [Color palette](mem://design/color-palette) — Terracotta & amber warm earthy palette, user hates green as primary
+- [Color palette](mem://design/color-palette) — Obsidian + champagne gold luxury palette, private banking aesthetic
