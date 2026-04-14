@@ -54,14 +54,24 @@ const cardVariants = {
 
 export default function StatsBanner() {
   return (
-    <section className="px-5 py-16 md:py-24 bg-brand-black">
-      <div className="mx-auto max-w-6xl">
+    <section className="relative px-5 py-16 md:py-24 bg-brand-yellow overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-[-40px] left-[-40px] w-32 h-32 rounded-full bg-[oklch(0.75_0.14_75)] opacity-70" />
+      <div className="absolute top-[10%] left-[8%] w-20 h-20 rounded-full bg-[oklch(0.80_0.12_80)] opacity-50" />
+      <div className="absolute top-[-20px] right-[-30px] w-28 h-28 rounded-full bg-[oklch(0.75_0.14_75)] opacity-60" style={{ clipPath: "inset(0 50% 50% 0)" }} />
+      <div className="absolute top-[15%] right-[5%] w-16 h-16 rounded-full bg-[oklch(0.80_0.12_80)] opacity-40" />
+      <div className="absolute bottom-[-30px] left-[15%] w-24 h-24 rounded-full bg-[oklch(0.75_0.14_75)] opacity-50" />
+      <div className="absolute bottom-[10%] right-[12%] w-20 h-20 rounded-full bg-[oklch(0.80_0.12_80)] opacity-60" />
+      <div className="absolute bottom-[-20px] right-[-20px] w-28 h-28 rounded-full bg-[oklch(0.75_0.14_75)] opacity-50" />
+      <div className="absolute top-[50%] left-[-20px] w-16 h-16 rounded-full bg-[oklch(0.80_0.12_80)] opacity-40" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-4 text-center font-heading text-sm font-bold uppercase tracking-widest text-brand-yellow"
+          className="mb-4 text-center font-heading text-sm font-bold uppercase tracking-widest text-brand-black"
         >
           The numbers don't lie
         </motion.p>
@@ -70,7 +80,7 @@ export default function StatsBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-12 text-center font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl"
+          className="mb-12 text-center font-heading text-3xl font-bold text-brand-black md:text-4xl lg:text-5xl"
         >
           Built different. Performs different.
         </motion.h2>
@@ -89,7 +99,7 @@ export default function StatsBanner() {
               <motion.div
                 whileHover={{ y: -6, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                className={`${s.bg} relative flex h-full flex-col items-center rounded-3xl p-5 text-center md:p-6`}
+                className="relative flex h-full flex-col items-center rounded-3xl bg-white p-5 text-center md:p-6"
                 style={{
                   borderWidth: "3px",
                   borderColor: "#0F0F0F",
@@ -99,7 +109,7 @@ export default function StatsBanner() {
               >
                 {/* Icon */}
                 <div
-                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/80"
+                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-yellow/40"
                   style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
                 >
                   <s.icon size={22} strokeWidth={2.5} />
