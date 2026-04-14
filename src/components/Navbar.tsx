@@ -48,7 +48,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-border/40 bg-obsidian/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         <a href="#" className="flex items-center gap-2.5">
-          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-9 w-auto brightness-0 invert opacity-90" />
+          <img src={giraffeLogo} alt="Giraffe CRM Logo" className="h-11 w-auto" />
           <span className="font-heading text-lg font-bold text-gold tracking-wide">Giraffe CRM</span>
         </a>
 
