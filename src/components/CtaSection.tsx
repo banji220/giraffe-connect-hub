@@ -46,7 +46,7 @@ export default function CtaSection() {
         width={600}
         height={800}
         loading="lazy"
-        className="absolute -bottom-8 -right-4 z-0 w-40 opacity-80 md:-right-2 md:bottom-0 md:w-56"
+        className="absolute -bottom-8 right-0 z-0 hidden w-40 opacity-80 md:block md:w-56"
       />
     </section>
   );
