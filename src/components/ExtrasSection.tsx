@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeInView from "./FadeInView";
 import { MessageSquare, Clock, DollarSign, Users, Shield, TrendingUp } from "lucide-react";
 
 const features = [
@@ -14,36 +14,29 @@ export default function ExtrasSection() {
   return (
     <section className="px-5 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl"
-        >
-          Everything else, handled.
-        </motion.h2>
+        <FadeInView>
+          <h2 className="mb-12 text-center font-heading text-3xl font-bold md:text-4xl">
+            Everything else, handled.
+          </h2>
+        </FadeInView>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
-            <motion.div
-              key={f.title}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4 }}
-              className="rounded-2xl bg-card p-6"
-              style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "6px 6px 0px #0F0F0F" }}
-            >
+            <FadeInView key={f.title} delay={i * 0.08}>
               <div
-                className={`mb-4 inline-flex rounded-xl ${f.accent} p-3`}
-                style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
+                className="rounded-2xl bg-card p-6"
+                style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "6px 6px 0px #0F0F0F" }}
               >
-                <f.icon size={22} className={f.iconColor ?? "text-foreground"} />
+                <div
+                  className={`mb-4 inline-flex rounded-xl ${f.accent} p-3`}
+                  style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
+                >
+                  <f.icon size={22} className={f.iconColor ?? "text-foreground"} />
+                </div>
+                <h3 className="mb-2 font-heading text-lg font-bold">{f.title}</h3>
+                <p className="text-sm text-muted-foreground">{f.desc}</p>
               </div>
-              <h3 className="mb-2 font-heading text-lg font-bold">{f.title}</h3>
-              <p className="text-sm text-muted-foreground">{f.desc}</p>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
       </div>

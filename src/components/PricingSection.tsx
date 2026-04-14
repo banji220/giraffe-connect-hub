@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import FadeInView from "./FadeInView";
 import { Check } from "lucide-react";
 import { BrutalButton } from "./Navbar";
 
@@ -25,7 +25,7 @@ const plans = [
       "Follow-up queue",
       "Priority support",
     ],
-    accent: "bg-electric-blue",
+    accent: "bg-emerald-primary",
     cta: "Go Pro",
     popular: true,
   },
@@ -35,67 +35,59 @@ export default function PricingSection() {
   return (
     <section id="pricing" className="px-5 py-16 md:py-24">
       <div className="mx-auto max-w-4xl">
-        <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-4 text-center font-heading text-3xl font-bold md:text-4xl"
-        >
-          Simple pricing
-        </motion.h2>
-        <p className="mx-auto mb-12 max-w-md text-center text-muted-foreground">
-          No hidden fees. No contracts. Cancel anytime.
-        </p>
+        <FadeInView>
+          <h2 className="mb-4 text-center font-heading text-3xl font-bold md:text-4xl">
+            Simple pricing
+          </h2>
+          <p className="mx-auto mb-12 max-w-md text-center text-muted-foreground">
+            No hidden fees. No contracts. Cancel anytime.
+          </p>
+        </FadeInView>
 
         <div className="grid gap-6 md:grid-cols-2">
           {plans.map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative"
-            >
-              {plan.popular && (
-                <span
-                  className="absolute -top-3 right-4 z-10 rounded-lg bg-coral px-3 py-1 font-heading text-xs font-bold text-foreground"
-                  style={{ borderWidth: "2px", borderColor: "#000" }}
-                >
-                  MOST POPULAR
-                </span>
-              )}
-              <div
-                className="flex h-full flex-col rounded-2xl border-foreground bg-card p-6"
-                style={{ borderWidth: "3px", boxShadow: "6px 6px 0px #000" }}
-              >
+            <FadeInView key={plan.name} delay={i * 0.1}>
+              <div className="relative">
+                {plan.popular && (
+                  <span
+                    className="absolute -top-3 right-4 z-10 rounded-lg bg-coral px-3 py-1 font-heading text-xs font-bold text-foreground"
+                    style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
+                  >
+                    MOST POPULAR
+                  </span>
+                )}
                 <div
-                  className={`mb-4 inline-flex self-start rounded-xl ${plan.accent} px-3 py-1 font-heading text-sm font-bold ${plan.accent === "bg-electric-blue" ? "text-white" : "text-foreground"}`}
-                  style={{ borderWidth: "2px", borderColor: "#000" }}
+                  className="flex h-full flex-col rounded-2xl bg-card p-6"
+                  style={{ borderWidth: "3px", borderColor: "#0F0F0F", boxShadow: "6px 6px 0px #0F0F0F" }}
                 >
-                  {plan.name}
+                  <div
+                    className={`mb-4 inline-flex self-start rounded-xl ${plan.accent} px-3 py-1 font-heading text-sm font-bold text-foreground`}
+                    style={{ borderWidth: "2px", borderColor: "#0F0F0F" }}
+                  >
+                    {plan.name}
+                  </div>
+                  <div className="mb-1 flex items-baseline gap-1">
+                    <span className="font-heading text-4xl font-bold">{plan.price}</span>
+                    <span className="text-sm text-muted-foreground">{plan.period}</span>
+                  </div>
+                  <p className="mb-6 text-sm text-muted-foreground">{plan.desc}</p>
+                  <ul className="mb-8 flex-1 space-y-3">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm">
+                        <Check size={16} className="shrink-0 text-emerald-primary" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <BrutalButton
+                    variant={plan.popular ? "primary" : "outline"}
+                    className="w-full"
+                  >
+                    {plan.cta}
+                  </BrutalButton>
                 </div>
-                <div className="mb-1 flex items-baseline gap-1">
-                  <span className="font-heading text-4xl font-bold">{plan.price}</span>
-                  <span className="text-sm text-muted-foreground">{plan.period}</span>
-                </div>
-                <p className="mb-6 text-sm text-muted-foreground">{plan.desc}</p>
-                <ul className="mb-8 flex-1 space-y-3">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm">
-                      <Check size={16} className="shrink-0 text-electric-blue" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <BrutalButton
-                  variant={plan.popular ? "primary" : "outline"}
-                  className="w-full"
-                >
-                  {plan.cta}
-                </BrutalButton>
               </div>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
       </div>
