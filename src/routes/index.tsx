@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import HowItWorks from "@/components/HowItWorks";
+import TerritorySection from "@/components/TerritorySection";
 import PainPoints from "@/components/PainPoints";
 import FeaturesSection from "@/components/FeaturesSection";
-import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
 import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
@@ -28,9 +29,10 @@ function Index() {
       <Navbar />
       <main>
         <HeroSection />
+        <HowItWorks />
+        <TerritorySection />
         <PainPoints />
         <FeaturesSection />
-        <HowItWorks />
         <SocialProof />
         <PricingSection />
       </main>
