@@ -10,6 +10,7 @@ import StatsBanner from "@/components/StatsBanner";
 import ExtrasSection from "@/components/ExtrasSection";
 import SocialProof from "@/components/SocialProof";
 import PricingSection from "@/components/PricingSection";
+import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
@@ -39,6 +40,7 @@ function Index() {
         <ExtrasSection />
         <SocialProof />
         <PricingSection />
+        <CtaSection />
       </main>
       <Footer />
     </div>
