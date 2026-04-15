@@ -126,11 +126,11 @@ export default function HeroSection() {
             Map-first. Mobile-first. Your whole business in one thumb.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4 animate-[fadeUp_0.6s_ease-out_0.45s_both]">
-            <BrutalButton>
-              Start Knocking <ArrowRight size={16} className="ml-1 inline" />
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4 animate-[fadeUp_0.6s_ease-out_0.45s_both]">
+            <BrutalButton className="w-full sm:w-auto px-10 py-4 text-base" onClick={() => window.location.href = "https://crm.holygiraffe.com/login"}>
+              Sign in <ArrowRight size={18} className="ml-1 inline" />
             </BrutalButton>
-            <BrutalButton variant="outline">Watch the 45s demo</BrutalButton>
+            <BrutalButton variant="outline" className="w-full sm:w-auto">Watch the 45s demo</BrutalButton>
           </div>
 
           {/* Social proof */}
