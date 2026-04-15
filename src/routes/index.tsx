@@ -12,7 +12,7 @@ import SocialProof from "@/components/SocialProof";
 import PricingSection from "@/components/PricingSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import MobileStickyBar from "@/components/MobileStickyBar";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +44,7 @@ function Index() {
         <CtaSection />
       </main>
       <Footer />
-      <MobileStickyBar />
+      
     </div>
   );
 }
