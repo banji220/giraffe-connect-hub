@@ -44,7 +44,7 @@ function Index() {
         <CtaSection />
       </main>
       <Footer />
-      <MobileStickyBar />
+      
     </div>
   );
 }
