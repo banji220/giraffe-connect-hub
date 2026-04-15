@@ -62,7 +62,8 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <BrutalButton>Get Early Access</BrutalButton>
+          <a href="https://crm.holygiraffe.com/login" className="font-heading text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-gold">Log in</a>
+          <BrutalButton onClick={() => window.location.href = "https://crm.holygiraffe.com/login"}>Get Early Access</BrutalButton>
         </div>
 
         <button className="text-foreground/70 md:hidden" onClick={() => setOpen(!open)}>
