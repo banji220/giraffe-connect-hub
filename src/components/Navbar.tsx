@@ -84,6 +84,13 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="https://app.holygiraffe.com/login"
+              className="font-heading text-sm font-medium text-muted-foreground hover:text-gold"
+              onClick={() => setOpen(false)}
+            >
+              Log in
+            </a>
             <BrutalButton className="w-full" onClick={() => { window.location.href = "https://app.holygiraffe.com/login"; }}>Get Early Access</BrutalButton>
           </div>
         </div>
