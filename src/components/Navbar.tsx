@@ -21,7 +21,7 @@ const BrutalButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`relative overflow-hidden rounded-xl px-6 py-3 font-heading text-sm font-bold tracking-wide transition-all duration-200 ${
+    className={`relative overflow-hidden rounded-xl px-6 py-3 font-heading text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer ${
       variant === "primary"
         ? "bg-gold text-obsidian hover:bg-gold-bright hover:shadow-[0_0_20px_oklch(0.75_0.09_85_/_0.25)]"
         : "bg-transparent text-foreground border border-border hover:border-gold/40 hover:text-gold"
