@@ -14,7 +14,7 @@ export default function CtaSection() {
           Giraffe CRM runs on any phone. Be on the map in 60 seconds.
         </p>
         <div className="mt-8">
-          <BrutalButton className="px-10 py-4 text-base">
+          <BrutalButton className="px-10 py-4 text-base" onClick={() => { window.location.href = "https://app.holygiraffe.com/login"; }}>
             Text yourself the link
           </BrutalButton>
           <p className="mt-4 text-sm text-muted-foreground/60">

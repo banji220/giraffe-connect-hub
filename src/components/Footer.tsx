@@ -3,7 +3,7 @@ import giraffeLogo from "@/assets/giraffe-logo.png";
 const links = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Login", href: "#" },
+  { label: "Login", href: "https://app.holygiraffe.com/login" },
   { label: "Contact", href: "#" },
 ];
 
