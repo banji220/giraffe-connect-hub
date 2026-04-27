@@ -5,6 +5,8 @@ const links = [
   { label: "Pricing", href: "#pricing" },
   { label: "Login", href: "https://app.holygiraffe.com/login" },
   { label: "Contact", href: "#" },
+  { label: "Privacy Policy", href: "https://app.holygiraffe.com/privacy" },
+  { label: "Terms of Service", href: "https://app.holygiraffe.com/terms" },
 ];
 
 export default function Footer() {
